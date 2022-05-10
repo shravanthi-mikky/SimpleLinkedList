@@ -83,7 +83,18 @@ namespace SimpleLinkedListOperations
                 }
             }
         }
-
+        public void Delete(T data)
+        {
+            Node<T> tempnode = head;
+            if (head != null)
+            {
+                tempnode = head;
+                head = head.next;
+                tempnode = null;
+                count--;
+            }
+        
+        }
 
         public void display()
         {
