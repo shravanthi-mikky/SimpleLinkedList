@@ -109,14 +109,42 @@ namespace SimpleLinkedListOperations
             Node<T> second_last = head;
             while (second_last.next.next != null)
                 second_last = second_last.next;
-
             // Change next of second last
             second_last.next = null;
-
         }
-        public void SearchNode(T data)
+        public bool SearchElement(int searchValue)
         {
-             
+            Node<T> temp = head;
+            int found = 0;
+            int i = 0;
+            bool status= false;
+            if (temp != null)
+            {
+                while (temp != null)
+                {
+                    i++;
+                    if (temp.data.Equals(searchValue))
+                    {
+                        found++;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                if (found == 1)
+                {
+                    Console.WriteLine(searchValue + " is found at index = " + i + ".");
+                    status= true;
+                }
+                else
+                {
+                    Console.WriteLine(searchValue + " is not found in the list.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The list is empty.");
+            }
+            return status;
         }
         public void display()
         {

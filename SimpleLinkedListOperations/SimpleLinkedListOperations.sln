@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLinkedListOperations", "SimpleLinkedListOperations.csproj", "{49EC8C39-DF97-47A1-BBB0-CA93C2F078FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLinkedListOperationsTests", "..\SimpleLinkedListOperationsTests\SimpleLinkedListOperationsTests.csproj", "{2CAB003E-DE7E-4265-A623-35C490E7386F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{49EC8C39-DF97-47A1-BBB0-CA93C2F078FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49EC8C39-DF97-47A1-BBB0-CA93C2F078FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49EC8C39-DF97-47A1-BBB0-CA93C2F078FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CAB003E-DE7E-4265-A623-35C490E7386F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAB003E-DE7E-4265-A623-35C490E7386F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAB003E-DE7E-4265-A623-35C490E7386F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CAB003E-DE7E-4265-A623-35C490E7386F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
