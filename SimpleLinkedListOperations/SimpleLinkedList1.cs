@@ -44,6 +44,46 @@ namespace SimpleLinkedListOperations
             }
             count++;
         }
+        public void InsertMethod(T newElement, int position)
+        {
+            Node<T> newNode = new Node<T>(newElement);
+            newNode.data = newElement;
+            newNode.next = null;
+
+            if (position < 1)
+            {
+                Console.Write("\nposition should be >= 1.");
+            }
+            else if (position == 1)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+
+                Node<T> temp = new Node<T>(newElement);
+                temp = head;
+                for (int i = 1; i < position - 1; i++)
+                {
+                    if (temp != null)
+                    {
+                        temp = temp.next;
+                    }
+                }
+
+                if (temp != null)
+                {
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+                else
+                {
+                    Console.Write("\nThe previous node is null.");
+                }
+            }
+        }
+
 
         public void display()
         {
