@@ -10,6 +10,13 @@ namespace SimpleLinkedListOperations
     {
         public int count = 0;
         Node<T> head;
+        public void AddNodeToFront(T data)
+        {
+            Node<T> node = new Node<T>(data);
+            node.next = head;
+            head = node;
+            count++;
+        }
         public void AddNodeToLast(T Element)
         {
             Node<T> newNode = new Node<T>(Element);
