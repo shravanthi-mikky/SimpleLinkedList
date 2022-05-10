@@ -64,6 +64,19 @@ while(true)
             obj5.display();
             Console.WriteLine("\n____________________________________________________");
             break;
+        case 6:
+            SimpleLinkedList1<int> obj6 = new();
+            obj6.AddNodeToFront(70);
+            obj6.AddNodeToFront(30);
+            obj6.AddNodeToFront(56);
+            Console.Write("The elements in LinkedList are:");
+            obj6.display();
+            Console.WriteLine();
+            obj6.removeLastNode();
+            Console.Write("The elements in LinkedList are:");
+            obj6.display();
+            Console.WriteLine();
+            break;
         default:
             Console.WriteLine("Please choose correct option!");
             break;
