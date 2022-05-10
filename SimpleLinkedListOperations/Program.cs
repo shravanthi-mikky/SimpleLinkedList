@@ -4,7 +4,7 @@ using SimpleLinkedListOperations;
 Console.WriteLine("Simple Linked List and Operations on it!");
 while(true)
 {
-    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element\n6)Removing the Last Element");
+    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element\n6)Removing the Last Element\n7)Searching for a Value in LinkedList\n8)Searching for Value using Generics");
     int option = Convert.ToInt16(Console.ReadLine());
     switch(option)
     {
@@ -77,6 +77,21 @@ while(true)
             obj6.display();
             Console.WriteLine();
             break;
+        case 7:
+            LinkedList2 obj7 = new();
+            obj7.AddNodeToFront(70);
+            obj7.AddNodeToFront(30);
+            obj7.AddNodeToFront(56);
+            obj7.SearchElement(30);
+            break;
+        case 8:
+            SimpleLinkedList1<int> obj8 = new();
+            obj8.AddNodeToFront(70);
+            obj8.AddNodeToFront(30);
+            obj8.AddNodeToFront(56);
+            Console.WriteLine(obj8.SearchElement(30));
+            break;
+            
         default:
             Console.WriteLine("Please choose correct option!");
             break;
