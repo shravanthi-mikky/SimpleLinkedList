@@ -83,7 +83,7 @@ namespace SimpleLinkedListOperations
                 }
             }
         }
-        public void Delete(T data)
+        public void Delete()
         {
             Node<T> tempnode = head;
             if (head != null)
@@ -105,7 +105,6 @@ namespace SimpleLinkedListOperations
             {
                 return;
             }
-
             // Find the second last node
             Node<T> second_last = head;
             while (second_last.next.next != null)
@@ -115,7 +114,10 @@ namespace SimpleLinkedListOperations
             second_last.next = null;
 
         }
-
+        public void SearchNode(T data)
+        {
+             
+        }
         public void display()
         {
             Node<T> temp = head;

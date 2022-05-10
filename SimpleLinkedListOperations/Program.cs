@@ -4,7 +4,7 @@ using SimpleLinkedListOperations;
 Console.WriteLine("Simple Linked List and Operations on it!");
 while(true)
 {
-    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element");
+    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element\n6)Removing the Last Element");
     int option = Convert.ToInt16(Console.ReadLine());
     switch(option)
     {
@@ -58,7 +58,7 @@ while(true)
             obj5.display();
             int len5 = obj5.count;
             Console.WriteLine("\nNumber of elements in the Simple Linked list are: {0}", len5);
-            obj5.Delete(56);
+            obj5.Delete();
             Console.WriteLine("Number of elements after removing first element: {0}", obj5.count);
             Console.Write("The elements in LinkedList are:");
             obj5.display();
