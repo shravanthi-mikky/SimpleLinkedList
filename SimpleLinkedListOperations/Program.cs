@@ -43,8 +43,8 @@ while(true)
         case 4:
             SimpleLinkedList1<int> obj4 = new();
             obj4.AddNodeToFront(70);
-            obj4.AddNodeToFront(30);
-            obj4.InsertMethod(56, 2);
+            obj4.AddNodeToFront(56);
+            obj4.InsertMethod(30, 2);
             Console.WriteLine("The elements in LinkedList are:");
             obj4.display();
             Console.WriteLine("\n_________________________________________");
