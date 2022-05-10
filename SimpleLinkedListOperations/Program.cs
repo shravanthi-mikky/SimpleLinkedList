@@ -4,7 +4,7 @@ using SimpleLinkedListOperations;
 Console.WriteLine("Simple Linked List and Operations on it!");
 while(true)
 {
-    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start");
+    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head");
     int option = Convert.ToInt16(Console.ReadLine());
     switch(option)
     {
@@ -28,8 +28,20 @@ while(true)
             obj2.display();
             Console.WriteLine("\n------------------------------------------");
             break;
+        case 3:
+            SimpleLinkedList1<int> obj3 = new();
+            obj3.head = new Node<int>(56);
+            Node<int> newNode1 = new Node<int>(30);
+            Node<int> newNode2 = new Node<int>(70);
+            obj3.head.next=newNode1;
+            newNode1.next = newNode2;
+            newNode2.next = null;
+            Console.WriteLine("The elements in LinkedList are:");
+            obj3.display();
+            Console.WriteLine("\n_________________________________________");
+            break;
         default:
-            Console.WriteLine("please choose correct option!");
+            Console.WriteLine("Please choose correct option!");
             break;
     }
 }

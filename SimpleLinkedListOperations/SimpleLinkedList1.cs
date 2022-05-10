@@ -9,7 +9,7 @@ namespace SimpleLinkedListOperations
     public class SimpleLinkedList1<T>
     {
         public int count = 0;
-        Node<T> head;
+        public Node<T> head;
         public void AddNodeToFront(T data)
         {
             Node<T> node = new Node<T>(data);
@@ -54,5 +54,6 @@ namespace SimpleLinkedListOperations
                 temp = temp.next;
             }
         }
+
     }
 }
