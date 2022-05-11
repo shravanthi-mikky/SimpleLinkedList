@@ -83,6 +83,35 @@ namespace SimpleLinkedListOperations
                 }
             }
         }
+        public void InsertAfter30(int searchValue, T newElement)
+        {
+            Node<T> temp = head;
+            int found = 0;
+            int i = 0;
+            if (temp != null)
+            {
+                while (temp != null)
+                {
+                    i++;
+                    if (temp.data.Equals(searchValue))
+                    {
+                        found++;
+                        Node<T> newNode = new Node<T>(newElement);
+                        newNode.data = newElement;
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        break;
+
+                    }
+                    temp = temp.next;
+                }
+            }
+            else
+            {
+                Console.WriteLine("The list is empty.");
+            }
+
+        }
         public void Delete()
         {
             Node<T> tempnode = head;
@@ -127,6 +156,7 @@ namespace SimpleLinkedListOperations
                     {
                         found++;
                         break;
+
                     }
                     temp = temp.next;
                 }
