@@ -4,7 +4,7 @@ using SimpleLinkedListOperations;
 Console.WriteLine("Simple Linked List and Operations on it!");
 while(true)
 {
-    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element\n6)Removing the Last Element\n7)Searching for a Value in LinkedList\n8)Searching for Value using Generics\n9)Insert Node after 30");
+    Console.WriteLine("PLease choose the option :\n1)Creating Simple LinkedList\n2)Add Element at start\n3)Appending Elements to head\n4)Inserting the Element\n5)Removing the first Element\n6)Removing the Last Element\n7)Searching for a Value in LinkedList\n8)Searching for Value using Generics\n9)Insert Node after 30\n10)Detele 40");
     int option = Convert.ToInt16(Console.ReadLine());
     switch(option)
     {
@@ -75,7 +75,7 @@ while(true)
             obj6.removeLastNode();
             Console.Write("The elements in LinkedList are:");
             obj6.display();
-            Console.WriteLine();
+            Console.WriteLine("\n____________________________________________________");
             break;
         case 7:
             LinkedList2 obj7 = new();
@@ -101,6 +101,19 @@ while(true)
             obj9.InsertAfter30(30, 40);
             Console.Write("The elements in LinkedList are:");
             obj9.display();
+            Console.WriteLine("\n----------------------------------------------------------");
+            break;
+        case 10:
+            SimpleLinkedList1<int> obj10 = new();
+            obj10.AddNodeToFront(70);
+            obj10.AddNodeToFront(40);
+            obj10.AddNodeToFront(30);
+            obj10.AddNodeToFront(56);
+            Console.Write("The elements in LinkedList are:");
+            obj10.display();
+            obj10.DeleteNode40(40);
+            Console.Write("The elements in LinkedList after deleting 40 are:");
+            obj10.display();
             Console.WriteLine("\n----------------------------------------------------------");
             break;
         default:

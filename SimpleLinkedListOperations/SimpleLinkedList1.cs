@@ -107,6 +107,7 @@ namespace SimpleLinkedListOperations
             }
             return found;
         }
+        //deleting the top element
         public void Delete()
         {
             Node<T> tempnode = head;
@@ -116,15 +117,13 @@ namespace SimpleLinkedListOperations
                 head = head.next;
                 tempnode = null;
                 count--;
-            }
-        
+            }        
         }
         //To Delete Last Node of LinkedList
         public void removeLastNode()
         {
             if (head == null)
                 return;
-
             if (head.next == null)
             {
                 return;
@@ -179,7 +178,33 @@ namespace SimpleLinkedListOperations
                 Console.Write("->{0}", temp.data);
                 temp = temp.next;
             }
+            Console.WriteLine();
         }
-
+        // delete 40
+        public int DeleteNode40(int searchValue)
+        {
+            Node<T> temp = head,previous=null;
+            int found = 0;
+            if (temp != null)
+            {
+                while (temp != null)
+                {
+                    if (temp.data.Equals(searchValue))
+                    {
+                        found++;
+                        previous.next = temp.next;
+                        
+                        break;
+                    }
+                    previous = temp;
+                    temp = temp.next;
+                }
+            }
+            else
+            {
+                Console.WriteLine("The list is empty.");
+            }
+            return found;
+        }
     }
 }
