@@ -111,7 +111,9 @@ while(true)
             obj10.AddNodeToFront(56);
             Console.Write("The elements in LinkedList are:");
             obj10.display();
+            Console.WriteLine("Number of elements after :"+obj10.count);
             obj10.DeleteNode40(40);
+            Console.WriteLine("Number of elements after deleting node 40:"+obj10.count);
             Console.Write("The elements in LinkedList after deleting 40 are:");
             obj10.display();
             Console.WriteLine("\n----------------------------------------------------------");
