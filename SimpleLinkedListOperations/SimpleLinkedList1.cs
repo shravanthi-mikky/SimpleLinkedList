@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLinkedListOperations
 {
-    public class SimpleLinkedList1<T>
+    public class SimpleLinkedList1<T> where T : IComparable<T>
     {
         public int count = 0;
         public Node<T> head;
@@ -61,7 +61,6 @@ namespace SimpleLinkedListOperations
             }
             else
             {
-
                 Node<T> temp = new Node<T>(newElement);
                 temp = head;
                 for (int i = 1; i < position - 1; i++)
@@ -71,7 +70,6 @@ namespace SimpleLinkedListOperations
                         temp = temp.next;
                     }
                 }
-
                 if (temp != null)
                 {
                     newNode.next = temp.next;
@@ -83,16 +81,14 @@ namespace SimpleLinkedListOperations
                 }
             }
         }
-        public void InsertAfter30(int searchValue, T newElement)
+        public int InsertAfter30(int searchValue, T newElement)
         {
             Node<T> temp = head;
             int found = 0;
-            int i = 0;
             if (temp != null)
             {
                 while (temp != null)
                 {
-                    i++;
                     if (temp.data.Equals(searchValue))
                     {
                         found++;
@@ -101,7 +97,6 @@ namespace SimpleLinkedListOperations
                         newNode.next = temp.next;
                         temp.next = newNode;
                         break;
-
                     }
                     temp = temp.next;
                 }
@@ -110,8 +105,9 @@ namespace SimpleLinkedListOperations
             {
                 Console.WriteLine("The list is empty.");
             }
-
+            return found;
         }
+        //deleting the top element
         public void Delete()
         {
             Node<T> tempnode = head;
@@ -121,15 +117,13 @@ namespace SimpleLinkedListOperations
                 head = head.next;
                 tempnode = null;
                 count--;
-            }
-        
+            }        
         }
         //To Delete Last Node of LinkedList
         public void removeLastNode()
         {
             if (head == null)
                 return;
-
             if (head.next == null)
             {
                 return;
@@ -184,7 +178,55 @@ namespace SimpleLinkedListOperations
                 Console.Write("->{0}", temp.data);
                 temp = temp.next;
             }
+            Console.WriteLine();
         }
+        // delete 40
+        public int DeleteNode40(int searchValue)
+        {
+            Node<T> temp = head,previous=null;
+            int found = 0;
+            if (temp != null)
+            {
+                while (temp != null)
+                {
+                    if (temp.data.Equals(searchValue))
+                    {
+                        found++;
+                        previous.next = temp.next;
+                        
+                        break;
+                    }
+                    previous = temp;
+                    temp = temp.next;
+                }
+            }
+            else
+            {
+                Console.WriteLine("The list is empty.");
+            }
+            return found;
+        }
+        public void sortedInsert(T data)
+        {
+            Node<T> current;
+            Node<T> new_node = new Node<T>(data);
 
+            /* Special case for head node */
+            if (head == null || (head.data.CompareTo(new_node.data) >= 0))
+            {
+                new_node.next = head;
+                head = new_node;
+            }
+            else
+            {
+                current = head;
+
+                while (current.next != null && (current.next.data.CompareTo(new_node.data)) < 0)
+                    current = current.next;
+
+                new_node.next = current.next;
+                current.next = new_node;
+            }
+        }
     }
 }

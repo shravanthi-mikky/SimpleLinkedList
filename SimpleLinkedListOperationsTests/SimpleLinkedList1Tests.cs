@@ -20,7 +20,30 @@ namespace SimpleLinkedListOperations.Tests
             objt.AddNodeToFront(56);
             objt.SearchElement(30);
             Assert.AreEqual(true, objt.SearchElement(30));
-            
+
+        }
+
+        [TestMethod()]
+        public void InsertAfter30Test()
+        {
+            SimpleLinkedList1<int> obj9 = new();
+            obj9.AddNodeToFront(70);
+            obj9.AddNodeToFront(30);
+            obj9.AddNodeToFront(56);
+            obj9.InsertAfter30(30, 40);
+            Assert.AreEqual(1, obj9.InsertAfter30(30, 40));
+
+        }
+
+        [TestMethod()]
+        public void DeleteNode40Test()
+        {
+            SimpleLinkedList1<int> obj10 = new();
+            obj10.AddNodeToFront(70);
+            obj10.AddNodeToFront(40);
+            obj10.AddNodeToFront(30);
+            obj10.AddNodeToFront(56);
+            Assert.AreEqual(1, obj10.DeleteNode40(40));
         }
     }
 }
