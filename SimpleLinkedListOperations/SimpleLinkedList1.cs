@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimpleLinkedListOperations
 {
-    public class SimpleLinkedList1<T>
+    public class SimpleLinkedList1<T> where T : IComparable<T>
     {
         public int count = 0;
         public Node<T> head;
@@ -205,6 +205,28 @@ namespace SimpleLinkedListOperations
                 Console.WriteLine("The list is empty.");
             }
             return found;
+        }
+        public void sortedInsert(T data)
+        {
+            Node<T> current;
+            Node<T> new_node = new Node<T>(data);
+
+            /* Special case for head node */
+            if (head == null || (head.data.CompareTo(new_node.data) >= 0))
+            {
+                new_node.next = head;
+                head = new_node;
+            }
+            else
+            {
+                current = head;
+
+                while (current.next != null && (current.next.data.CompareTo(new_node.data)) < 0)
+                    current = current.next;
+
+                new_node.next = current.next;
+                current.next = new_node;
+            }
         }
     }
 }
