@@ -61,7 +61,6 @@ namespace SimpleLinkedListOperations
             }
             else
             {
-
                 Node<T> temp = new Node<T>(newElement);
                 temp = head;
                 for (int i = 1; i < position - 1; i++)
@@ -71,7 +70,6 @@ namespace SimpleLinkedListOperations
                         temp = temp.next;
                     }
                 }
-
                 if (temp != null)
                 {
                     newNode.next = temp.next;
@@ -83,16 +81,14 @@ namespace SimpleLinkedListOperations
                 }
             }
         }
-        public void InsertAfter30(int searchValue, T newElement)
+        public int InsertAfter30(int searchValue, T newElement)
         {
             Node<T> temp = head;
             int found = 0;
-            int i = 0;
             if (temp != null)
             {
                 while (temp != null)
                 {
-                    i++;
                     if (temp.data.Equals(searchValue))
                     {
                         found++;
@@ -101,7 +97,6 @@ namespace SimpleLinkedListOperations
                         newNode.next = temp.next;
                         temp.next = newNode;
                         break;
-
                     }
                     temp = temp.next;
                 }
@@ -110,7 +105,7 @@ namespace SimpleLinkedListOperations
             {
                 Console.WriteLine("The list is empty.");
             }
-
+            return found;
         }
         public void Delete()
         {
