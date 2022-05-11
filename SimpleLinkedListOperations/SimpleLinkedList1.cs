@@ -193,7 +193,7 @@ namespace SimpleLinkedListOperations
                     {
                         found++;
                         previous.next = temp.next;
-                        
+                        count--;
                         break;
                     }
                     previous = temp;
